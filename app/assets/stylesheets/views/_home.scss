@@ -106,7 +106,7 @@
   position: relative;
   margin-bottom: lines(0.5);
   border-bottom: 1px solid $border;
-  min-height: lines(3.5);
+  min-height: lines(5.5);
 
   @include media(tablet) {
     padding-bottom: lines(1);
@@ -139,8 +139,8 @@ $home-list-image-padding-mobile: lines(0.5);
 
 .home-list-image-container-mobile {
   @extend .home-list-image-container;
-  width: $home-list-image-size-mobile;
-  height: $home-list-image-size-mobile;
+  width: 7.5em;
+  height: 9.5em;
   display: block;
 
   @include media(tablet) {
@@ -152,7 +152,12 @@ $home-list-image-padding-mobile: lines(0.5);
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: contain;
   @include border-radius($default-border-radius);
+
+  @include media(tablet) {
+    object-fit: fill;
+  }
 }
 
 .home-no-image {
@@ -165,7 +170,7 @@ $home-list-image-padding-mobile: lines(0.5);
 }
 
 .home-list-details-with-image {
-  margin-left: $home-list-image-size-mobile + $home-list-image-padding-mobile;
+  margin-left: 8.25em;
 
   @include media(tablet) {
     margin-left: $image-width + $image-padding;
@@ -237,8 +242,6 @@ $home-list-avatar-padding: lines(0.25);
     width: 100%;
   }
 
-  display: none;
-
   @include media(large-mobile) {
     display: block;
   }
@@ -257,8 +260,7 @@ $home-list-avatar-padding: lines(0.25);
 
 .home-list-author-with-listing-image,
 .browsing-list-item-author-with-listing-image {
-  left: 0;
-
+  left: 8.25em;
   @include media(large-mobile) {
     left: $home-list-image-size-mobile + $home-list-image-padding-mobile;
   }
@@ -280,8 +282,6 @@ $home-list-avatar-padding: lines(0.25);
   height: 40px;
   line-height: 22px;
   max-width: lines(10);
-
-  display: none;
 
   @include media(large-mobile) {
     display: block;
@@ -318,6 +318,9 @@ $home-list-avatar-padding: lines(0.25);
 .browsing-list-item-price-value-mobile,
 .home-list-shape-value-mobile,
 .browsing-list-item-shape-value-mobile {
+  display: inline-block;
+  vertical-align: top;
+
   font-size: em(24);
   & > .smaller {
     font-size: em(18);
@@ -363,6 +366,8 @@ $home-list-avatar-padding: lines(0.25);
 
 .home-list-price-quantity,
 .browsing-list-item-price-quantity {
+  display: inline-block;
+  padding-left: 4px;
   @include ellipsis;
 }
 
